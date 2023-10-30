@@ -64,6 +64,33 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
+        String expectedString =
+                          lineSeparator() +
+                          "ID: " + testJob.getId() + lineSeparator() +
+                          "Name: " + "Product tester" + lineSeparator() +
+                          "Employer: " + "ACME" + lineSeparator() +
+                          "Location: " + "Desert" + lineSeparator() +
+                          "Position Type: " + "Quality control" + lineSeparator() +
+                          "Core Competency: " + "Persistence" + lineSeparator();
 
+        String toStringResult = testJob.toString();
+        assertEquals(expectedString,toStringResult);
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job testJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        String expectedString =
+                        lineSeparator() +
+                        "ID: " + testJob.getId() + lineSeparator() +
+                        "Name: " + "Data not available" + lineSeparator() +
+                        "Employer: " + "Data not available" + lineSeparator() +
+                        "Location: " + "Data not available" + lineSeparator() +
+                        "Position Type: " + "Data not available" + lineSeparator() +
+                        "Core Competency: " + "Data not available" + lineSeparator();
+
+        String toStringResult = testJob.toString();
+        assertEquals(expectedString,toStringResult);
     }
 }
