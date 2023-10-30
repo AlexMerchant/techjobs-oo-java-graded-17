@@ -47,6 +47,7 @@ public class JobTest {
         assertNotEquals("When comparing two distinct Jobs objects for equality using the Job class's .equals() method, they should return false",true, testJob1.equals(testJob2));
     }
 
+    /* I think this test passes here and in TestTaskFive, but will not pass locally on Windows */
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
@@ -57,6 +58,11 @@ public class JobTest {
         assertEquals(lastChar, lineSeparator());
 
 //        assertEquals("First line of a .toString() on a Job object should be a new line",true,testJob.toString());
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
 
     }
