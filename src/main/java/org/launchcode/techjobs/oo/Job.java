@@ -1,6 +1,7 @@
 package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
+import static java.lang.System.lineSeparator;
 
 public class Job {
 
@@ -40,6 +41,16 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+
+    // TODO: Add a customer toString() method
+    @Override
+    public String toString() {
+        String renderedString = "";
+        renderedString += lineSeparator();
+        renderedString += lineSeparator();
+
+        return renderedString;
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID and id.

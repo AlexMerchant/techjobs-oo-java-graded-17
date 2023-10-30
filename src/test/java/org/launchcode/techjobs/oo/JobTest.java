@@ -3,7 +3,7 @@ package org.launchcode.techjobs.oo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-//import static org.junit.Assert.assertNotEquals;
+import static java.lang.System.lineSeparator;
 
 public class JobTest {
     //TODO: Create your unit tests here
@@ -45,5 +45,19 @@ public class JobTest {
         Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertNotEquals("When comparing two distinct Jobs objects for equality using the Job class's .equals() method, they should return false",true, testJob1.equals(testJob2));
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String firstChar = String.valueOf(testJob.toString().charAt(0));
+        String lastChar = String.valueOf(testJob.toString().charAt(testJob.toString().length()-1));
+        assertEquals(firstChar, lineSeparator());
+        assertEquals(lastChar, lineSeparator());
+
+//        assertEquals("First line of a .toString() on a Job object should be a new line",true,testJob.toString());
+
+
     }
 }
