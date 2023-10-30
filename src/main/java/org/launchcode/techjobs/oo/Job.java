@@ -53,7 +53,7 @@ public class Job {
                           "Employer: " + this.employer + lineSeparator() +
                           "Location: " + this.location + lineSeparator() +
                           "Position Type: " + this.positionType + lineSeparator() +
-                          "Core Competency: " + this.coreCompetency + lineSeparator();
+                          "Core Competency: " + this.coreCompetency;
         renderedString += lineSeparator(); // Add empty line to end
 
         return renderedString;
