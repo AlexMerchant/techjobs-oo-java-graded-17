@@ -48,12 +48,12 @@ public class Job {
     public String toString() {
         String renderedString = "";
         renderedString += lineSeparator(); // Add empty line to start
-        renderedString += "ID:  " + this.id + lineSeparator() +
-                          "Name:  " + this.name + lineSeparator() +
-                          "Employer:  " + this.employer + lineSeparator() +
-                          "Location:  " + this.location + lineSeparator() +
-                          "Position Type:  " + this.positionType + lineSeparator() +
-                          "Core Competency:  " + this.coreCompetency + lineSeparator();
+        renderedString += "ID: " + this.id + lineSeparator() +
+                          "Name: " + this.name + lineSeparator() +
+                          "Employer: " + this.employer + lineSeparator() +
+                          "Location: " + this.location + lineSeparator() +
+                          "Position Type: " + this.positionType + lineSeparator() +
+                          "Core Competency: " + this.coreCompetency + lineSeparator();
         renderedString += lineSeparator(); // Add empty line to end
 
         return renderedString;
