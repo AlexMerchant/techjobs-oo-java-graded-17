@@ -46,14 +46,20 @@ public class Job {
     // TODO: Add a customer toString() method
     @Override
     public String toString() {
+        String renderName = this.name != null ? this.name : "Data not available";
+        String renderEmployer = this.employer != null ? this.employer.getValue() : "Data not available";
+        String renderLocation = this.location != null ? this.location.getValue() : "Data not available";
+        String renderPositionType = this.positionType != null ? this.positionType.getValue() : "Data not available";
+        String renderCoreCompetency = this.coreCompetency != null ? this.coreCompetency.getValue() : "Data not available";
+
         String renderedString = "";
         renderedString += lineSeparator(); // Add empty line to start
         renderedString += "ID: " + this.id + lineSeparator() +
-                          "Name: " + this.name + lineSeparator() +
-                          "Employer: " + this.employer + lineSeparator() +
-                          "Location: " + this.location + lineSeparator() +
-                          "Position Type: " + this.positionType + lineSeparator() +
-                          "Core Competency: " + this.coreCompetency;
+                          "Name: " + renderName + lineSeparator() +
+                          "Employer: " + renderEmployer + lineSeparator() +
+                          "Location: " + renderLocation + lineSeparator() +
+                          "Position Type: " + renderPositionType + lineSeparator() +
+                          "Core Competency: " + renderCoreCompetency;
         renderedString += lineSeparator(); // Add empty line to end
 
         return renderedString;
