@@ -46,11 +46,19 @@ public class Job {
     // TODO: Add a customer toString() method
     @Override
     public String toString() {
-        String renderName = this.name != null ? this.name : "Data not available";
-        String renderEmployer = this.employer != null ? this.employer.getValue() : "Data not available";
-        String renderLocation = this.location != null ? this.location.getValue() : "Data not available";
-        String renderPositionType = this.positionType != null ? this.positionType.getValue() : "Data not available";
-        String renderCoreCompetency = this.coreCompetency != null ? this.coreCompetency.getValue() : "Data not available";
+        /*
+        String renderName = (this.name != null || this.name.isEmpty()) ? this.name : "Data not available";
+        String renderEmployer = (this.employer != null || this.employer.getValue().isEmpty()) ? this.employer.getValue() : "Data not available";
+        String renderLocation = (this.location != null || this.location.getValue().isEmpty()) ? this.location.getValue() : "Data not available";
+        String renderPositionType = (this.positionType != null || this.positionType.getValue().isEmpty()) ? this.positionType.getValue() : "Data not available";
+        String renderCoreCompetency = (this.coreCompetency != null || this.coreCompetency.getValue().isEmpty()) ? this.coreCompetency.getValue() : "Data not available";
+         */
+
+        String renderName = !(this.name.isEmpty()) ? this.name : "Data not available";
+        String renderEmployer = !(this.employer.getValue().isEmpty()) ? this.employer.getValue() : "Data not available";
+        String renderLocation = !(this.location.getValue().isEmpty()) ? this.location.getValue() : "Data not available";
+        String renderPositionType = !(this.positionType.getValue().isEmpty()) ? this.positionType.getValue() : "Data not available";
+        String renderCoreCompetency = !(this.coreCompetency.getValue().isEmpty()) ? this.coreCompetency.getValue() : "Data not available";
 
         String renderedString = "";
         renderedString += lineSeparator(); // Add empty line to start
