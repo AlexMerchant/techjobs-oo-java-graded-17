@@ -22,7 +22,13 @@ public class Job {
 
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
         this();
-        this.name = aName;
+
+        if (aName.isEmpty()) {
+            this.name = "Data not available";
+        } else {
+            this.name = aName;
+        }
+
         this.employer = aEmployer;
         this.location = aLocation;
         this.positionType = aPositionType;
@@ -54,6 +60,7 @@ public class Job {
         String renderCoreCompetency = (this.coreCompetency != null || this.coreCompetency.getValue().isEmpty()) ? this.coreCompetency.getValue() : "Data not available";
          */
 
+        /*
         String renderName = !(this.name.isEmpty()) ? this.name : "Data not available";
         String renderEmployer = !(this.employer.getValue().isEmpty()) ? this.employer.getValue() : "Data not available";
         String renderLocation = !(this.location.getValue().isEmpty()) ? this.location.getValue() : "Data not available";
@@ -68,6 +75,17 @@ public class Job {
                           "Location: " + renderLocation + lineSeparator() +
                           "Position Type: " + renderPositionType + lineSeparator() +
                           "Core Competency: " + renderCoreCompetency;
+        renderedString += lineSeparator(); // Add empty line to end
+         */
+
+        String renderedString = "";
+        renderedString += lineSeparator(); // Add empty line to start
+        renderedString += "ID: " + this.id + lineSeparator() +
+                "Name: " + this.name + lineSeparator() +
+                "Employer: " + this.employer + lineSeparator() +
+                "Location: " + this.location + lineSeparator() +
+                "Position Type: " + this.positionType + lineSeparator() +
+                "Core Competency: " + this.coreCompetency;
         renderedString += lineSeparator(); // Add empty line to end
 
         return renderedString;
